@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Espagne Contemporaine</title>
+  <link rel="stylesheet" href="estilos.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Espagne Contemporaine</h1>
+    <nav>
+      <a href="#exposition">Exposition</a>
+      <a href="#biographie">Biographie</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="idiomas">
+      <a href="index.html" title="Español"><img src="banderas/es.png" alt="ES"></a>
+      <a href="index_en.html" title="English"><img src="banderas/en.png" alt="EN"></a>
+      <a href="index_fr.html" title="Français"><img src="banderas/fr.png" alt="FR"></a>
+      <a href="index_de.html" title="Deutsch"><img src="banderas/de.png" alt="DE"></a>
+    </div>
+  </header>
+
+  <main>
+    <!-- EXPOSITION -->
+    <section id="exposition" class="galeria">
+      <article class="obra"><img src="imagenes/Albéniz.jpg" alt="Albéniz"><p>“Albéniz”</p></article>
+      <article class="obra"><img src="imagenes/Asturias.jpg" alt="Asturias"><p>“Asturias”</p></article>
+      <article class="obra"><img src="imagenes/Canto Jondo.jpg" alt="Canto Jondo"><p>“Canto Jondo”</p></article>
+      <article class="obra"><img src="imagenes/El Escorial.jpg" alt="El Escorial"><p>“El Escorial”</p></article>
+      <article class="obra"><img src="imagenes/Ibérica.jpg" alt="Ibérica"><p>“Ibérica”</p></article>
+      <article class="obra"><img src="imagenes/La Alhambra.jpg" alt="La Alhambra"><p>“La Alhambra”</p></article>
+      <article class="obra"><img src="imagenes/la-espana-liquida.jpg" alt="La España Líquida"><p>“L'Espagne Liquide”</p></article>
+      <article class="obra"><img src="imagenes/La piel del Sur.jpg" alt="La piel del Sur"><p>“La Peau du Sud”</p></article>
+      <article class="obra"><img src="imagenes/Lince Ibérico.jpg" alt="Lince Ibérico"><p>“Lynx ibérique”</p></article>
+      <article class="obra"><img src="imagenes/Manzanares.jpg" alt="Manzanares"><p>“Manzanares”</p></article>
+      <article class="obra"><img src="imagenes/Memorias de España.jpg" alt="Memorias de España"><p>“Mémoires d'Espagne”</p></article>
+    </section>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+      <span class="cerrar" id="cerrar">&times;</span>
+      <img class="lightbox-img" id="img-ampliada" src="" alt="Œuvre agrandie" />
+    </div>
+
+    <!-- BIOGRAPHIE -->
+    <section id="biographie" class="bibliografia-contenedor">
+      <h2>Biographie</h2>
+      <p>
+        Víctor Daniel Muñoz García, né à Palma de Majorque en 1986 (Îles Baléares, Espagne), est un artiste dont le parcours s’est construit à l’intersection de la musique, de l’éducation et d’une profonde fascination pour la symbolique sacrée. Sa formation académique est aussi variée que ses centres d’intérêt, comprenant des études de piano et de violon, un master en éducation et un diplôme en histoire de l’art de l’Université des Îles Baléares. Pendant cinq ans, il a été membre dévoué de l’Orchestre Symphonique des Îles Baléares, une expérience qui a sans doute affiné sa discipline et sa compréhension de l’harmonie et de la structure. Cependant, le véritable catalyseur de son expression artistique est apparu dès son plus jeune âge, lorsqu’il a découvert un monde de significations cachées dans la symbolique sacrée. Cette fascination l’a conduit à explorer des domaines aussi variés que l’égyptologie et les hiéroglyphes égyptiens, le mystère des Manuscrits de la mer Morte, les énigmatiques lignes de Nazca, et la complexité de l’écriture cunéiforme mésopotamienne. Parallèlement à ces explorations globales, Víctor D. a développé un lien profond avec les alignements mésolithiques et la culture architecturale mégalithique, un intérêt forgé dès son enfance à Majorque. L’île, berceau des Talayots, des Navetas et des Menhirs, lui a offert un laboratoire naturel pour comprendre la relation entre l’homme, la terre et la symbolique ancestrale. Cette connexion s’est étendue aux Dolmens et aux Cromlechs, trouvant des échos dans les mystérieux crop circles anglais et l’influence du Land Art. Le Land Art, mouvement artistique des années 60 avec des figures comme Robert Smithson, Nancy Holt et Michael Heizer, résonne profondément dans la sensibilité de Víctor D. La création d’œuvres directement dans le paysage, souvent éphémères et soumises aux éléments, s’aligne avec son intérêt pour l’échelle monumentale et le dialogue entre l’intervention humaine et l’environnement naturel. Influencé par des artistes espagnols tels que José María Yturralde, Eusebio Sempere, Joaquín Michavila, Soledad Sevilla et Jordi Teixidor, qui explorent une géométrie pure et abstraite au-delà des modèles platoniciens, Víctor D., à travers son œuvre, cherche à révéler les liens entre ces formes d’expression anciennes et l’art contemporain. Il explore la manière dont les motifs et symboles du passé résonnent encore dans notre compréhension de l’univers et de nous-mêmes. Sa production dans le domaine de l’art contemporain est celle d’un créateur-passeur entre les époques, soucieux de dévoiler la profonde symbiose entre savoir ancestral et préoccupations esthétiques actuelles.
+      </p>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <form action="https://formsubmit.co/victormallorca16@gmail.com" method="POST">
+        <input type="text" name="nom" placeholder="Votre nom" required />
+        <input type="email" name="email" placeholder="Votre email" required />
+        <input type="tel" name="telephone" placeholder="+33 600 000 000" required />
+        <textarea name="message" placeholder="Votre message" required></textarea>
+        <button type="submit">Envoyer</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Galerie d’art Espagne Contemporaine</p>
+  </footer>
+
+  <script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("img-ampliada");
+    const cerrar = document.getElementById("cerrar");
+    const imagenes = document.querySelectorAll(".galeria img");
+
+    imagenes.forEach(img => {
+      img.addEventListener("click", () => {
+        lightboxImg.src = img.src;
+        lightbox.style.display = "flex";
+        document.body.style.overflow = "hidden";
+      });
+    });
+
+    cerrar.addEventListener("click", () => {
+      lightbox.style.display = "none";
+      lightboxImg.src = "";
+      document.body.style.overflow = "";
+    });
+
+    lightbox.addEventListener("click", e => {
+      if (e.target !== lightboxImg && e.target !== cerrar) {
+        lightbox.style.display = "none";
+        lightboxImg.src = "";
+        document.body.style.overflow = "";
+      }
+    });
+  </script>
+</body>
+</html>
