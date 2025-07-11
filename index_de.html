@@ -3,49 +3,73 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Spanien Zeitgenössisch</title>
+  <title>Zeitgenössisches Spanien</title>
   <link rel="stylesheet" href="estilos.css" />
   <link href="https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display&display=swap" rel="stylesheet">
+
+  <script>
+    let tonAktiv = false;
+    function tonUmschalten() {
+      const audio = document.getElementById("audioHintergrund");
+      tonAktiv = !tonAktiv;
+      if (tonAktiv) {
+        audio.play();
+      } else {
+        audio.pause();
+        audio.currentTime = 0;
+      }
+    }
+  </script>
 </head>
 <body>
-  <header>
-    <h1>Spanien Zeitgenössisch</h1>
-    <nav>
-      <a href="#ausstellung">Ausstellung</a>
-      <a href="#biografie">Biografie</a>
-      <a href="#kontakt">Kontakt</a>
-    </nav>
-    <div class="idiomas">
-      <a href="index.html" title="Español"><img src="banderas/es.png" alt="ES"></a>
-      <a href="index_en.html" title="English"><img src="banderas/en.png" alt="EN"></a>
-      <a href="index_fr.html" title="Français"><img src="banderas/fr.png" alt="FR"></a>
-      <a href="index_de.html" title="Deutsch"><img src="banderas/de.png" alt="DE"></a>
+  <header class="encabezado">
+    <div class="titulo-izquierda">
+      <h1>Zeitgenössisches Spanien</h1>
+    </div>
+
+    <div class="frase-central" onclick="tonUmschalten();">
+      <img src="iconos/sonido.png" alt="Ton aktivieren/deaktivieren" class="icono-sonoro">
+      <span>Höre die Klanglandschaft, während du jede plastische Form des Multiversums betrachtest</span>
+    </div>
+
+    <audio id="audioHintergrund" src="audio/audio.mp3" loop></audio>
+
+    <div class="idiomas-menu">
+      <div class="banderas">
+        <a href="index.html"><img src="banderas/es.png" alt="ES"></a>
+        <a href="index_en.html"><img src="banderas/en.png" alt="EN"></a>
+        <a href="index_fr.html"><img src="banderas/fr.png" alt="FR"></a>
+        <a href="index_de.html"><img src="banderas/de.png" alt="DE"></a>
+      </div>
+      <nav class="menu-superior">
+        <a href="#werke">Werke</a>
+        <a href="#biografie">Biografie</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
     </div>
   </header>
 
   <main>
-    <!-- AUSSTELLUNG -->
-    <section id="ausstellung" class="galeria">
+    <section id="werke" class="galeria">
+      <h2>Werke</h2>
       <article class="obra"><img src="imagenes/Albéniz.jpg" alt="Albéniz"><p>„Albéniz“</p></article>
       <article class="obra"><img src="imagenes/Asturias.jpg" alt="Asturias"><p>„Asturias“</p></article>
       <article class="obra"><img src="imagenes/Canto Jondo.jpg" alt="Canto Jondo"><p>„Canto Jondo“</p></article>
       <article class="obra"><img src="imagenes/El Escorial.jpg" alt="El Escorial"><p>„El Escorial“</p></article>
       <article class="obra"><img src="imagenes/Ibérica.jpg" alt="Ibérica"><p>„Ibérica“</p></article>
-      <article class="obra"><img src="imagenes/La Alhambra.jpg" alt="La Alhambra"><p>„Die Alhambra“</p></article>
-      <article class="obra"><img src="imagenes/la-espana-liquida.jpg" alt="La España Líquida"><p>„Das flüssige Spanien“</p></article>
-      <article class="obra"><img src="imagenes/La piel del Sur.jpg" alt="La piel del Sur"><p>„Die Haut des Südens“</p></article>
-      <article class="obra"><img src="imagenes/Lince Ibérico.jpg" alt="Lince Ibérico"><p>„Iberischer Luchs“</p></article>
+      <article class="obra"><img src="imagenes/La Alhambra.jpg" alt="Alhambra"><p>„Alhambra“</p></article>
+      <article class="obra"><img src="imagenes/la-espana-liquida.jpg" alt="Das flüssige Spanien"><p>„Das flüssige Spanien“</p></article>
+      <article class="obra"><img src="imagenes/La piel del Sur.jpg" alt="Die Haut des Südens"><p>„Die Haut des Südens“</p></article>
+      <article class="obra"><img src="imagenes/Lince Ibérico.jpg" alt="Iberischer Luchs"><p>„Iberischer Luchs“</p></article>
       <article class="obra"><img src="imagenes/Manzanares.jpg" alt="Manzanares"><p>„Manzanares“</p></article>
-      <article class="obra"><img src="imagenes/Memorias de España.jpg" alt="Memorias de España"><p>„Erinnerungen an Spanien“</p></article>
+      <article class="obra"><img src="imagenes/Memorias de España.jpg" alt="Erinnerungen an Spanien"><p>„Erinnerungen an Spanien“</p></article>
     </section>
 
-    <!-- LIGHTBOX -->
     <div class="lightbox" id="lightbox">
       <span class="cerrar" id="cerrar">&times;</span>
-      <img class="lightbox-img" id="img-ampliada" src="" alt="Vergrößertes Kunstwerk" />
+      <img class="lightbox-img" id="img-ampliada" src="" alt="Vergrößertes Werk" />
     </div>
 
-    <!-- BIOGRAFIE -->
     <section id="biografie" class="bibliografia-contenedor">
       <h2>Biografie</h2>
       <p>
@@ -53,13 +77,12 @@
       </p>
     </section>
 
-    <!-- KONTAKT -->
     <section id="kontakt">
       <h2>Kontakt</h2>
       <form action="https://formsubmit.co/victormallorca16@gmail.com" method="POST">
         <input type="text" name="name" placeholder="Ihr Name" required />
         <input type="email" name="email" placeholder="Ihre E-Mail-Adresse" required />
-        <input type="tel" name="telefon" placeholder="+49 600 000 000" required />
+        <input type="tel" name="telefon" placeholder="+49 170 0000000" required />
         <textarea name="nachricht" placeholder="Ihre Nachricht" required></textarea>
         <button type="submit">Senden</button>
       </form>
@@ -67,7 +90,7 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 Galerie für zeitgenössische Kunst – Spanien</p>
+    <p>&copy; 2025 Zeitgenössisches Spanien</p>
   </footer>
 
   <script>
