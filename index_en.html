@@ -6,59 +6,83 @@
   <title>Contemporary Spain</title>
   <link rel="stylesheet" href="estilos.css" />
   <link href="https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display&display=swap" rel="stylesheet">
+
+  <script>
+    let soundActive = false;
+    function toggleSound() {
+      const audio = document.getElementById("backgroundAudio");
+      soundActive = !soundActive;
+      if (soundActive) {
+        audio.play();
+      } else {
+        audio.pause();
+        audio.currentTime = 0;
+      }
+    }
+  </script>
 </head>
 <body>
-  <header>
-    <h1>Contemporary Spain</h1>
-    <nav>
-      <a href="#exhibition">Exhibition</a>
-      <a href="#biography">Biography</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <div class="idiomas">
-      <a href="index.html" title="Español"><img src="banderas/es.png" alt="ES"></a>
-      <a href="index_en.html" title="English"><img src="banderas/en.png" alt="EN"></a>
-      <a href="index_fr.html" title="Français"><img src="banderas/fr.png" alt="FR"></a>
-      <a href="index_de.html" title="Deutsch"><img src="banderas/de.png" alt="DE"></a>
+  <header class="encabezado">
+    <div class="titulo-izquierda">
+      <h1>Contemporary Spain</h1>
+    </div>
+
+    <div class="frase-central" onclick="toggleSound();">
+      <img src="iconos/sonido.png" alt="Activate/Deactivate sound" class="icono-sonoro">
+      <span>Listen to the soundscape as you observe each plastic form of the multiverse</span>
+    </div>
+
+    <audio id="backgroundAudio" src="audio/audio.mp3" loop></audio>
+
+    <div class="idiomas-menu">
+      <div class="banderas">
+        <a href="index.html"><img src="banderas/es.png" alt="ES"></a>
+        <a href="index_en.html"><img src="banderas/en.png" alt="EN"></a>
+        <a href="index_fr.html"><img src="banderas/fr.png" alt="FR"></a>
+        <a href="index_de.html"><img src="banderas/de.png" alt="DE"></a>
+      </div>
+      <nav class="menu-superior">
+        <a href="#works">Works</a>
+        <a href="#biography">Biography</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
   </header>
 
   <main>
-    <!-- EXHIBITION -->
-    <section id="exhibition" class="galeria">
+    <section id="works" class="galeria">
+      <h2>Works</h2>
       <article class="obra"><img src="imagenes/Albéniz.jpg" alt="Albéniz"><p>“Albéniz”</p></article>
       <article class="obra"><img src="imagenes/Asturias.jpg" alt="Asturias"><p>“Asturias”</p></article>
       <article class="obra"><img src="imagenes/Canto Jondo.jpg" alt="Canto Jondo"><p>“Canto Jondo”</p></article>
       <article class="obra"><img src="imagenes/El Escorial.jpg" alt="El Escorial"><p>“El Escorial”</p></article>
       <article class="obra"><img src="imagenes/Ibérica.jpg" alt="Ibérica"><p>“Ibérica”</p></article>
       <article class="obra"><img src="imagenes/La Alhambra.jpg" alt="La Alhambra"><p>“La Alhambra”</p></article>
-      <article class="obra"><img src="imagenes/la-espana-liquida.jpg" alt="La España Líquida"><p>“La España Líquida”</p></article>
-      <article class="obra"><img src="imagenes/La piel del Sur.jpg" alt="La piel del Sur"><p>“La piel del Sur”</p></article>
-      <article class="obra"><img src="imagenes/Lince Ibérico.jpg" alt="Lince Ibérico"><p>“Lynx”</p></article>
+      <article class="obra"><img src="imagenes/la-espana-liquida.jpg" alt="Liquid Spain"><p>“Liquid Spain”</p></article>
+      <article class="obra"><img src="imagenes/La piel del Sur.jpg" alt="Southern Skin"><p>“Southern Skin”</p></article>
+      <article class="obra"><img src="imagenes/Lince Ibérico.jpg" alt="Iberian Lynx"><p>“Iberian Lynx”</p></article>
       <article class="obra"><img src="imagenes/Manzanares.jpg" alt="Manzanares"><p>“Manzanares”</p></article>
-      <article class="obra"><img src="imagenes/Memorias de España.jpg" alt="Memorias de España"><p>“Memories of Spain”</p></article>
+      <article class="obra"><img src="imagenes/Memorias de España.jpg" alt="Memories of Spain"><p>“Memories of Spain”</p></article>
     </section>
 
-    <!-- LIGHTBOX -->
     <div class="lightbox" id="lightbox">
       <span class="cerrar" id="cerrar">&times;</span>
-      <img class="lightbox-img" id="img-ampliada" src="" alt="Enlarged artwork" />
+      <img class="lightbox-img" id="img-ampliada" src="" alt="Expanded work" />
     </div>
 
-    <!-- BIOGRAPHY -->
     <section id="biography" class="bibliografia-contenedor">
       <h2>Biography</h2>
       <p>
         Víctor Daniel Muñoz García, born in Palma de Mallorca in 1986 (Balearic Islands, Spain), is an artist whose career has been forged at the intersection of music, education, and a profound fascination with sacred symbolism. His academic background is as diverse as his interests, spanning a career in piano and violin, a Master’s degree in Education, and a diploma in Art History from the University of the Balearic Islands. For five years, he was a dedicated member of the Balearic Islands Symphony Orchestra—an experience that undoubtedly refined his discipline and understanding of harmony and structure. However, the true catalyst for his artistic expression emerged very early, when he discovered a hidden world of meaning in sacred symbolism. This fascination led him to explore fields as varied as Egyptology and Egyptian hieroglyphs, the mystery of the Dead Sea Scrolls, the enigmatic Nazca Lines (geoglyphs etched in the Peruvian desert by the Nazca culture between the 1st and 6th centuries AD), and the complexity of Mesopotamian cuneiform writing. Alongside these global explorations, Víctor D. developed a deep bond with Mesolithic alignments and megalithic architecture—a fascination nurtured since childhood in Mallorca. The island, home to Talayots (massive circular or square stone towers, possibly used for surveillance or rituals), Navetas (prehistoric burial structures), and Menhirs (upright standing stones), offered him a natural laboratory to study the connection between humanity, the earth, and ancestral symbolism. This connection extended to Dolmens (burial chambers formed by vertical stones and a horizontal slab) and Cromlechs (stone circles like the famous Stonehenge), echoing in mysterious English crop circles and the influence of Land Art. The Land Art movement—emerging in the 1960s through artists like Robert Smithson, Nancy Holt, and Michael Heizer—deeply resonates with Víctor D.’s sensibility. The creation of site-specific, often ephemeral artworks subject to the elements aligns with his interest in monumental scale and the dialogue between human intervention and the natural environment. His understanding of these disciplines—from the complexity of a musical score to the grandeur of an ancient geoglyph—enables him to blend technical precision with a vision rooted in ancestral and cosmic dimensions. Influenced by fellow Spanish painters such as José María Yturralde, Eusebio Sempere, Joaquín Michavila, Soledad Sevilla, and Jordi Teixidor—who explore pure and abstract geometry beyond Platonic models—Víctor D. seeks to unveil the connections between ancient forms of expression and contemporary art, exploring how the patterns and symbols of the past continue to resonate in our understanding of the universe and ourselves. His work in the field of contemporary art is not just that of an artist, but of a co-creator bridging eras, revealing the profound symbiosis between ancestral knowledge and the aesthetic concerns of our time.
+      
       </p>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact">
       <h2>Contact</h2>
       <form action="https://formsubmit.co/victormallorca16@gmail.com" method="POST">
         <input type="text" name="name" placeholder="Your name" required />
-        <input type="email" name="email" placeholder="Your email address" required />
+        <input type="email" name="email" placeholder="Your email" required />
         <input type="tel" name="phone" placeholder="+34 600 000 000" required />
         <textarea name="message" placeholder="Your message" required></textarea>
         <button type="submit">Send</button>
@@ -67,7 +91,7 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 Contemporary Art Gallery – Spain</p>
+    <p>&copy; 2025 Contemporary Spain</p>
   </footer>
 
   <script>
