@@ -6,26 +6,52 @@
   <title>España Contemporánea</title>
   <link rel="stylesheet" href="estilos.css" />
   <link href="https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display&display=swap" rel="stylesheet">
+
+  <script>
+    let sonidoActivo = false;
+    function toggleSonido() {
+      const audio = document.getElementById("audioFondo");
+      sonidoActivo = !sonidoActivo;
+      if (sonidoActivo) {
+        audio.play();
+      } else {
+        audio.pause();
+        audio.currentTime = 0;
+      }
+    }
+  </script>
 </head>
 <body>
-  <header>
-    <h1>España Contemporánea</h1>
-    <nav>
-      <a href="#exposicion">Exposición</a>
-      <a href="#biografia">Biografía</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-   <div class="idiomas">
-  <a href="index.html" title="Español"><img src="banderas/es.png" alt="ES"></a>
-  <a href="index_en.html" title="English"><img src="banderas/en.png" alt="EN"></a>
-  <a href="index_fr.html" title="Français"><img src="banderas/fr.png" alt="FR"></a>
-  <a href="index_de.html" title="Deutsch"><img src="banderas/de.png" alt="DE"></a>
-</div>
+  <header class="encabezado">
+    <div class="titulo-izquierda">
+      <h1>España Contemporánea</h1>
+    </div>
 
+    <div class="frase-central" onclick="toggleSonido();">
+      <img src="iconos/sonido.png" alt="Activar/Desactivar sonido" class="icono-sonoro">
+      <span>Escucha el paisaje sonoro mientras observas cada forma plástica del multiverso</span>
+    </div>
+
+    <audio id="audioFondo" src="audio/audio.mp3" loop></audio>
+
+    <div class="idiomas-menu">
+      <div class="banderas">
+        <a href="index.html" title="Español"><img src="banderas/es.png" alt="ES"></a>
+        <a href="index_en.html" title="English"><img src="banderas/en.png" alt="EN"></a>
+        <a href="index_fr.html" title="Français"><img src="banderas/fr.png" alt="FR"></a>
+        <a href="index_de.html" title="Deutsch"><img src="banderas/de.png" alt="DE"></a>
+      </div>
+      <nav class="menu-superior">
+        <a href="#obras">Obras</a>
+        <a href="#biografia">Biografía</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <section id="exposicion" class="galeria">
+    <section class="galeria" id="obras">
+      <h2>Obras</h2>
       <article class="obra"><img src="imagenes/Albéniz.jpg" alt="Albéniz"><p>“Albéniz”</p></article>
       <article class="obra"><img src="imagenes/Asturias.jpg" alt="Asturias"><p>“Asturias”</p></article>
       <article class="obra"><img src="imagenes/Canto Jondo.jpg" alt="Canto Jondo"><p>“Canto Jondo”</p></article>
@@ -64,7 +90,7 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 Galería de Arte España Contemporánea</p>
+    <p>&copy; 2025 España Contemporánea</p>
   </footer>
 
   <script>
