@@ -6,46 +6,70 @@
   <title>Espagne Contemporaine</title>
   <link rel="stylesheet" href="estilos.css" />
   <link href="https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display&display=swap" rel="stylesheet">
+
+  <script>
+    let sonActif = false;
+    function basculerSon() {
+      const audio = document.getElementById("audioFond");
+      sonActif = !sonActif;
+      if (sonActif) {
+        audio.play();
+      } else {
+        audio.pause();
+        audio.currentTime = 0;
+      }
+    }
+  </script>
 </head>
 <body>
-  <header>
-    <h1>Espagne Contemporaine</h1>
-    <nav>
-      <a href="#exposition">Exposition</a>
-      <a href="#biographie">Biographie</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <div class="idiomas">
-      <a href="index.html" title="Español"><img src="banderas/es.png" alt="ES"></a>
-      <a href="index_en.html" title="English"><img src="banderas/en.png" alt="EN"></a>
-      <a href="index_fr.html" title="Français"><img src="banderas/fr.png" alt="FR"></a>
-      <a href="index_de.html" title="Deutsch"><img src="banderas/de.png" alt="DE"></a>
+  <header class="encabezado">
+    <div class="titulo-izquierda">
+      <h1>Espagne Contemporaine</h1>
+    </div>
+
+    <div class="frase-central" onclick="basculerSon();">
+      <img src="iconos/sonido.png" alt="Activer/Désactiver le son" class="icono-sonoro">
+      <span>Écoutez le paysage sonore tout en observant chaque forme plastique du multivers</span>
+    </div>
+
+    <audio id="audioFond" src="audio/audio.mp3" loop></audio>
+
+    <div class="idiomas-menu">
+      <div class="banderas">
+        <a href="index.html"><img src="banderas/es.png" alt="ES"></a>
+        <a href="index_en.html"><img src="banderas/en.png" alt="EN"></a>
+        <a href="index_fr.html"><img src="banderas/fr.png" alt="FR"></a>
+        <a href="index_de.html"><img src="banderas/de.png" alt="DE"></a>
+      </div>
+      <nav class="menu-superior">
+        <a href="#oeuvres">Œuvres</a>
+        <a href="#biographie">Biographie</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
   </header>
 
   <main>
-    <!-- EXPOSITION -->
-    <section id="exposition" class="galeria">
+    <section id="oeuvres" class="galeria">
+      <h2>Œuvres</h2>
       <article class="obra"><img src="imagenes/Albéniz.jpg" alt="Albéniz"><p>“Albéniz”</p></article>
       <article class="obra"><img src="imagenes/Asturias.jpg" alt="Asturias"><p>“Asturias”</p></article>
       <article class="obra"><img src="imagenes/Canto Jondo.jpg" alt="Canto Jondo"><p>“Canto Jondo”</p></article>
       <article class="obra"><img src="imagenes/El Escorial.jpg" alt="El Escorial"><p>“El Escorial”</p></article>
       <article class="obra"><img src="imagenes/Ibérica.jpg" alt="Ibérica"><p>“Ibérica”</p></article>
-      <article class="obra"><img src="imagenes/La Alhambra.jpg" alt="La Alhambra"><p>“La Alhambra”</p></article>
-      <article class="obra"><img src="imagenes/la-espana-liquida.jpg" alt="La España Líquida"><p>“L'Espagne Liquide”</p></article>
-      <article class="obra"><img src="imagenes/La piel del Sur.jpg" alt="La piel del Sur"><p>“La Peau du Sud”</p></article>
-      <article class="obra"><img src="imagenes/Lince Ibérico.jpg" alt="Lince Ibérico"><p>“Lynx ibérique”</p></article>
+      <article class="obra"><img src="imagenes/La Alhambra.jpg" alt="L'Alhambra"><p>“L'Alhambra”</p></article>
+      <article class="obra"><img src="imagenes/la-espana-liquida.jpg" alt="L'Espagne liquide"><p>“L'Espagne liquide”</p></article>
+      <article class="obra"><img src="imagenes/La piel del Sur.jpg" alt="La peau du Sud"><p>“La peau du Sud”</p></article>
+      <article class="obra"><img src="imagenes/Lince Ibérico.jpg" alt="Lynx ibérique"><p>“Lynx ibérique”</p></article>
       <article class="obra"><img src="imagenes/Manzanares.jpg" alt="Manzanares"><p>“Manzanares”</p></article>
-      <article class="obra"><img src="imagenes/Memorias de España.jpg" alt="Memorias de España"><p>“Mémoires d'Espagne”</p></article>
+      <article class="obra"><img src="imagenes/Memorias de España.jpg" alt="Mémoires d'Espagne"><p>“Mémoires d'Espagne”</p></article>
     </section>
 
-    <!-- LIGHTBOX -->
     <div class="lightbox" id="lightbox">
       <span class="cerrar" id="cerrar">&times;</span>
       <img class="lightbox-img" id="img-ampliada" src="" alt="Œuvre agrandie" />
     </div>
 
-    <!-- BIOGRAPHIE -->
     <section id="biographie" class="bibliografia-contenedor">
       <h2>Biographie</h2>
       <p>
@@ -53,12 +77,11 @@
       </p>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact">
       <h2>Contact</h2>
       <form action="https://formsubmit.co/victormallorca16@gmail.com" method="POST">
         <input type="text" name="nom" placeholder="Votre nom" required />
-        <input type="email" name="email" placeholder="Votre email" required />
+        <input type="email" name="email" placeholder="Votre adresse électronique" required />
         <input type="tel" name="telephone" placeholder="+33 600 000 000" required />
         <textarea name="message" placeholder="Votre message" required></textarea>
         <button type="submit">Envoyer</button>
@@ -67,7 +90,7 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 Galerie d’art Espagne Contemporaine</p>
+    <p>&copy; 2025 Espagne Contemporaine</p>
   </footer>
 
   <script>
