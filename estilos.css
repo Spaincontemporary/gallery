@@ -1,3 +1,4 @@
+/* 🎨 Estilo general */
 body {
   margin: 0;
   font-family: 'Lora', serif;
@@ -5,45 +6,62 @@ body {
   color: #333;
 }
 
-/* Encabezado y navegación */
-header {
+/* 🧭 Encabezado distribuido: izquierda (título), centro (frase sonora), derecha (banderas + menú) */
+.encabezado {
   background: #fff;
   padding: 1rem 2rem;
   border-bottom: 1px solid #ddd;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   position: relative;
+  flex-wrap: wrap;
 }
 
-h1 {
+/* 🔵 Título a la izquierda */
+.titulo-izquierda h1 {
   font-family: 'Playfair Display', serif;
   font-size: 2rem;
+  margin: 0;
 }
 
-nav a {
-  margin-left: 1rem;
-  text-decoration: none;
-  color: #666;
-  font-weight: bold;
+/* 🔊 Frase sonora y icono al centro */
+.frase-central {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #555;
+  cursor: pointer;
+  text-align: center;
 }
 
-nav a:hover {
-  color: #000;
+.icono-sonoro {
+  height: 24px;
+  width: auto;
+  transition: transform 0.2s ease;
+  vertical-align: middle;
 }
 
-/* Selector de idiomas con banderas */
-.idiomas {
-  position: absolute;
-  top: 1.5rem;
-  right: 2rem;
+.frase-central:hover .icono-sonoro {
+  transform: scale(1.1);
+}
+
+/* 🌍 Banderas + menú superior a la derecha */
+.idiomas-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.banderas {
   display: flex;
   gap: 0.5rem;
-  align-items: center;
-  z-index: 100;
 }
 
-.idiomas img {
+.banderas img {
   width: 28px;
   height: auto;
   border-radius: 3px;
@@ -52,12 +70,35 @@ nav a:hover {
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
 }
 
-.idiomas img:hover {
+.banderas img:hover {
   transform: scale(1.1);
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
-/* Galería */
+/* 🔗 Menú superior debajo de banderas */
+.menu-superior {
+  display: flex;
+  gap: 1rem;
+}
+
+.menu-superior a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #666;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.menu-superior a:hover {
+  color: #000;
+}
+
+/* 🎯 Separación visual debajo del encabezado */
+main {
+  margin-top: 2rem;
+}
+
+/* 🖼️ Galería de obras */
 .galeria {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -66,6 +107,20 @@ nav a:hover {
   background: #fff;
 }
 
+.galeria h2 {
+  grid-column: 1 / -1;
+}
+
+/* ✅ Títulos de sección centrados */
+h2 {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+/* 🖼️ Obra individual */
 .obra {
   text-align: center;
 }
@@ -93,7 +148,7 @@ nav a:hover {
   color: #444;
 }
 
-/* Secciones */
+/* 📚 Biografía y secciones */
 section {
   padding: 2rem 3rem;
 }
@@ -107,14 +162,7 @@ section {
   color: #333;
 }
 
-.bibliografia-contenedor h2 {
-  text-align: center;
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-/* Formulario de contacto */
+/* 📩 Contacto */
 form {
   max-width: 500px;
   margin: 0 auto;
@@ -147,7 +195,7 @@ button:hover {
   background: #555;
 }
 
-/* Footer */
+/* 🔻 Footer */
 footer {
   text-align: center;
   padding: 1rem;
@@ -155,7 +203,7 @@ footer {
   font-size: 0.9rem;
 }
 
-/* Lightbox */
+/* 🖼️ Lightbox */
 .lightbox {
   display: none;
   position: fixed;
